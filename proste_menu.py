@@ -6,32 +6,16 @@ class MenuBar(Menu):
         Menu.__init__(self, ws)
 
         file = Menu(self, tearoff=False)
-        file.add_command(label="New")  
-        file.add_command(label="Open")  
-        file.add_command(label="Save")  
-        file.add_command(label="Save as")    
-        file.add_separator()
-        file.add_command(label="Exit", underline=1, command=self.quit)
-        self.add_cascade(label="File",underline=0, menu=file)
+        file.add_command(label="Nowy")
+        file.add_command(label="Nowe okno")
+        file.add_command(label="Otwórz")
+        file.add_command(label="Zapisz")
+        self.add_cascade(label="Plik",underline=0, menu=file)
         
-        edit = Menu(self, tearoff=0)  
-        edit.add_command(label="Undo")  
-        edit.add_separator()     
-        edit.add_command(label="Cut")  
-        edit.add_command(label="Copy")  
-        edit.add_command(label="Paste")  
-        self.add_cascade(label="Edit", menu=edit) 
 
-        view = Menu(self, tearoff=0)
-        ratio = Menu(self, tearoff=0)
-        for aspected_ratio in ('4:3', '16:9'):
-            ratio.add_command(label=aspected_ratio)
-        view.add_cascade(label='Ratio', menu=ratio)
-        self.add_cascade(label='View', menu=view)
 
-        help = Menu(self, tearoff=0)  
-        help.add_command(label="About", command=self.about)  
-        self.add_cascade(label="Help", menu=help)  
+
+
 
     def exit(self):
         self.exit
